@@ -1,5 +1,5 @@
 # gitfreebeer/gns3-server
-[![](https://images.microbadger.com/badges/version/jsimonetti/gns3-server.svg)](https://microbadger.com/images/jsimonetti/gns3-server "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/jsimonetti/gns3-server.svg)](https://microbadger.com/images/jsimonetti/gns3-server "Get your own image badge on microbadger.com")[![](https://img.shields.io/docker/pulls/jsimonetti/gns3-server.svg)]()[![](https://img.shields.io/docker/stars/jsimonetti/gns3-server.svg)]()
+
 
 
 ## Usage
@@ -9,9 +9,9 @@ docker run \
     --rm -d \
     --name gns3 \
     --net=host --privileged \
-    -e BRIDGE_ADDRESS="172.21.1.1/24" \
+    -e BRIDGE_ADDRESS="192.168.251.1/24" \
     -v <data path>:/data \
-    jsimonetti/gns3-server:latest 
+    gitfreebeer/gns3-server:latest 
 ```
 
 ## Parameters
@@ -23,9 +23,9 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 
 
 * `-v /data` - Path to persistant data
-* `-e BRIDGE_ADDRESS="172.21.1.1/24"` - Configure the internal NAT network bridge for GNS3
+* `-e BRIDGE_ADDRESS="192.168.251.1/24"` - Configure the internal NAT network bridge for GNS3
 
-It is based on alpine-linux edge, for shell access whilst the container is running do `docker exec -it gns3 /bin/sh`.
+It is based on alpine-linux, for shell access whilst the container is running do `docker exec -it gns3 /bin/sh`.
 
 ## Info
 
